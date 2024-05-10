@@ -56,11 +56,17 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 </head>
 
 <body>
+  <!-- Se importa la fuente Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <span class="navbar-brand">
-        <span class="kern">Maquina de Turing - Automatas</span>
+        Maquina de Turing - Automatas - Equipo 1
       </span>
     </div>
 
@@ -68,25 +74,28 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
       <!-- Document Menu -->
       <select id="tm-doc-menu" class="form-control"></select>
       <!-- Edit Menu -->
+
       <div class="btn-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          Edit <span class="caret"></span>
+          Editar <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#" id="tm-doc-action-duplicate">Duplicate document&hellip;</a></li>
-          <li><a href="#" id="tm-doc-action-newblank">New blank document&hellip;</a></li>
+          <li><a href="#" id="tm-doc-action-duplicate">Duplicar documento&hellip;</a></li>
+          <li><a href="#" id="tm-doc-action-newblank">Nuevo documento en blanco&hellip;</a></li>
           <li role="separator" class="divider"></li>
           <!-- "Rename" saves when closed, so don't allow closing with Esc -->
           <li><a href="#" data-toggle="modal" data-keyboard="false"
-            data-target="#renameDialog">Rename&hellip;</a></li>
+            data-target="#renameDialog">Renombrar&hellip;</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#" data-toggle="modal" data-target="#deleteDialog">Delete&hellip;</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#deleteDialog">Borrar&hellip;</a></li>
         </ul>
       </div>
+      
     </div>
+
     <!-- Import and "Share" Menu -->
-    <div class="navbar-right">
+    <!-- <div class="navbar-right">
       <button type="button" class="btn btn-default navbar-btn tm-needsready" aria-label="Import" disabled
       data-toggle="modal" data-target="#importPanel"
       data-has-tooltip data-placement="bottom" data-trigger="hover" title="Import">
@@ -97,7 +106,8 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
       data-has-tooltip data-placement="bottom" data-trigger="hover" title="Share">
         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
       </button>
-    </div>
+    </div> -->
+
   </div>
 </nav>
 <!-- ** Modal dialogs ** -->
@@ -124,16 +134,16 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteDialogHeader">Delete this document?</h4>
+        <h4 class="modal-title" id="deleteDialogHeader">Desea borrar este documento?</h4>
       </div>
       <div class="modal-body">
-        This will erase the document and remove it from the menu.
-        You can’t undo this action.
+        Esto borrará el documento y lo eliminará del menú.
+        No puedes deshacer esta acción.
       </div>
       <div class="modal-footer">
         <button id="tm-doc-action-delete" type="button"
-          class="btn btn-danger pull-left" data-dismiss="modal">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          class="btn btn-danger pull-left" data-dismiss="modal">Borrar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
@@ -144,19 +154,19 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="resetExampleDialogHeader">Save a copy of your changes?</h4>
+        <h4 class="modal-title" id="resetExampleDialogHeader">Desea guardar una copia de sus cambios?</h4>
       </div>
       <div class="modal-body">
-        <p>Resetting this example will erase any changes made to it.</p>
-        You have the option to save your changes as a new document, or simply discard them.
-        You can’t undo this action.
+        <p>Restablecer este ejemplo borrará cualquier cambio realizado en él..</p>
+        Tiene la opción de guardar sus cambios como un documento nuevo o simplemente descartarlos.
+        No puedes deshacer esta acción.
       </div>
       <div class="modal-footer">
         <button id="tm-doc-action-resetdiscard" type="button"
           class="btn btn-danger pull-left" data-dismiss="modal">Discard</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         <button id="tm-doc-action-resetsave" type="button"
-          class="btn btn-primary btn-wide-save" data-dismiss="modal">Save</button>
+          class="btn btn-primary btn-wide-save" data-dismiss="modal">Guardar</button>
       </div>
     </div>
   </div>
@@ -219,91 +229,6 @@ aria-labelledby="importPanelHeader">
     </div>
   </div>
 </div>
-<!-- Dialog for Sharing/Export -->
-<div id="exportPanel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exportPanelHeader">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exportPanelHeader">Share &amp; Export</h4>
-      </div>
-      <div class="modal-body">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h5 class="panel-title">Share link</h5>
-          </div>
-          <div class="panel-body">
-            <div class="form-group">
-              <div id="shareGistContainer">
-              </div>
-              <p>
-                You can link to any GitHub gist by its ID:
-              </p>
-              <div class="well well-sm">
-                <samp>turingmachine.io/?import-gist=<var>ID</var></samp>
-              </div>
-              <p>
-                When using your own gists, you gain the ability to update and delete the contents,
-                and to share multiple documents at once.
-              </p>
-              <a class="disclosure-triangle collapsed" role="button" data-toggle="collapse" href="#customGistInstructions">
-                How to make your own gist
-              </a>
-              <div id="customGistInstructions" class="collapse">
-                <ol>
-                  <li>Open the <a href="https://gist.github.com" target="_blank">new gist page.</a>
-                    Sign into GitHub if you’d like to be able to edit or delete the contents in the future.
-                  </li>
-                  <li>Download the document (below), then drag &amp; drop it onto the new gist page. <br>
-                      Alternatively, copy &amp; paste the contents, and name the file to end with <code>.yaml</code>
-                  </li>
-                  <li>Create the gist. The gist ID will be at the end of the URL.</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h5 class="panel-title">Download</h5>
-          </div>
-          <div class="panel-body">
-            <div class="form-group">
-              <p>Download the current document to get a backup copy
-                to share and import on other browsers and devices.</p>
-              <div id="exportDownloadContainer">
-              </div>
-              <div class="download-fallback">
-                <a class="disclosure-triangle collapsed" role="button" data-toggle="collapse" href="#downloadAttrInfo">
-                  Why the extra steps?
-                </a>
-                <div id="downloadAttrInfo" class="help-block collapse icon-help-block">
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                  <p>Your browser
-                    <a href="http://caniuse.com/#feat=download" target="_blank">doesn’t support</a>
-                    an HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download" target="_blank">feature</a>
-                    to mark links as downloadable.
-                    Without sending your data to a server—just to have it
-                    <a href="https://en.wikipedia.org/wiki/MIME#Content-Disposition" target="_blank">marked</a>
-                    and sent back again—the simplest alternative is to save the file manually.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <p>The contents of the download are below.</p>
-              <button id="copyContentsButton" type="button" class="btn btn-default" data-clipboard-target="#exportTextarea">
-                Copy to clipboard
-              </button>
-            </div>
-            <textarea id="exportTextarea"
-            class="form-control" rows="8" cols="40" readonly></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Main Content -->
 <div class="container-fluid">
@@ -315,10 +240,10 @@ aria-labelledby="importPanelHeader">
         <noscript>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Tip: Enable JavaScript</h3>
+              <h3 class="panel-title">Tip: Habilite JavaScript</h3>
             </div>
             <div class="panel-body">
-              <p>The visualization couldn’t load because JavaScript is disabled.</p>
+              <p>La visualización no se pudo cargar porque JavaScript está deshabilitado.</p>
             </div>
           </div>
         </noscript>
@@ -328,19 +253,19 @@ aria-labelledby="importPanelHeader">
         <div class="col-xs-1">
           <button type="button" class="btn btn-warning btn-xs text-center tm-btn-diagram tm-reset">
             <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span><br>
-            Reset
+            Reiniciar
           </button>
         </div>
         <div class="col-xs-2 col-xs-offset-4 text-center">
           <button type="button" class="btn btn-primary text-center tm-btn-diagram tm-step">
             <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span><br>
-            Step
+            Siguiente
           </button>
         </div>
         <div class="col-xs-1">
           <button type="button" class="btn btn-default text-center tm-btn-diagram tm-run">
-            <span class="glyphicon glyphicon-play" aria-hidden="true"></span><br>
-            Run
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            <br>Ejecuta
           </button>
         </div>
       </div>
@@ -351,10 +276,10 @@ aria-labelledby="importPanelHeader">
     <div id="editor-wrapper">
       <div id="editor-alerts-container"></div>
       <button type="button" class="btn btn-primary tm-editor-load">
-        Load machine
+        CARGAR MAQUINA
       </button>
       <button type="button" class="btn btn-default tm-editor-revert">
-        Revert to diagram
+        REVERTIR DIAGRAMA
       </button>
       <div id="editor-container" class="tm-editor"></div>
     </div>
@@ -378,47 +303,36 @@ aria-labelledby="importPanelHeader">
 <!-- Tutorial -->
 <div id="tutorial" class="row">
   <section class="col-md-4 col-sm-6">
-    <h3>Try it out</h3>
+    <h3>Pruebalo</h3>
     <p>
-      <strong>Run</strong> the machine to see it in action.
-      At any time, you can <strong>step</strong> or <strong>pause</strong> to get a closer look,
-      or <strong>reset</strong> to start over.
+      <strong>Ejecuta</strong> la maquina para verla en accion.
+       En cualquier momento, puedes dar un <strong>paso</strong> o <strong>pausar</strong> para verlo más de cerca,
+      o <strong>reiniciar</strong> para empezar de nuevo.
     </p>
-    <p>There are over a dozen different example machines to explore.</p>
     <p>
-      Most of the examples take input. Experiment with different inputs to see what happens!
-      Edit the code and click <em>Load machine</em> to sync your changes.
+      Edite el código y haga clic en <em>Cargar máquina</em> para sincronizar sus cambios.
     </p>
     <section>
-      <h4>What’s going on?</h4>
-      <p>The colored circles are <em>states</em>. The squares underneath are <em>tape cells</em>.</p>
-      <p>The current state and tape cell are highlighted.</p>
-      <p>At each step, a Turing machine reads its current state and tape symbol,
-      and looks them up in its <em>transition table</em> for an instruction.
-      Each <em>instruction</em> does 3 things:</p>
+      <h4>¿Qué está sucediendo?</h4>
+      <p>Los círculos de colores son <em>estados</em>. Los cuadrados de debajo son <em>celdas de cinta</em>.</p>
+      <p>Se resaltan el estado actual y la celda de la cinta.</p>
+      <p>
+        En cada paso, una máquina de Turing lee su estado actual y el símbolo de la cinta, y los busca en su tabla de transición para obtener una instrucción.
+        Cada instrucción hace 3 cosas:
+      </p>
       <ol>
-        <li><strong>write</strong> a symbol to the current tape cell</li>
-        <li><strong>move</strong> to the left or right by one cell</li>
-        <li><strong>set</strong> the new state</li>
+        <li><strong>write</strong> un símbolo a la celda de cinta actual</li>
+        <li><strong>move</strong> a la izquierda o derecha por una celda</li>
+        <li><strong>set</strong> el nuevo estado</li>
       </ol>
-      <p>That’s it!</p>
-      <p>This repeats step after step, until the machine reaches a combination of state and symbol
-        that don’t have an instruction defined. At that point it <em>halts</em>.
+      <p>¡Eso es todo!</p>
+      <p>
+        Esto se repite paso tras paso, hasta que la máquina alcanza una combinación de estado y símbolo que no tienen una instrucción definida. En ese momento se detiene
       </p>
     </section>
     <section>
-      <h4><a href="#tm-details" class="disclosure-triangle collapsed" role="button" data-toggle="collapse">
-        In more detail
-      </a></h4>
       <div id="tm-details" class="panel-group collapse" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
-          <div id="headingBasics" class="panel-heading" role="tab">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#tm-details" href="#details-basics" aria-controls="details-basics" aria-expanded="true">
-                Basics
-              </a>
-            </h4>
-          </div>
           <div id="details-basics" aria-labelledby="headingBasics" class="panel-collapse collapse in" role="tabpanel">
             <div class="panel-body">
               <p>A <dfn>Turing machine</dfn> is an abstract device to model computation as rote symbol manipulation.</p>
@@ -520,21 +434,17 @@ aria-labelledby="importPanelHeader">
         </div>
       </div>
     </section>
-    <p>
-      For a very readable introduction to Turing machines, including their significance and interesting implications,
-      see the excellent <a href="http://plato.stanford.edu/entries/turing-machine" target="_blank">entry in the Stanford Encyclopedia of Philosophy</a>.
-    </p>
   </section>
 
 
 
   <section class="col-md-4 col-sm-6">
-    <h3>Make your own</h3>
-    <p>Make spinoffs from the examples or your own creations by using
-      <i>Edit</i> &gt; <i>Duplicate document</i>.
-    You can also start from scratch with a new blank document.</p>
-    <p>All it takes to describe a Turing machine is a start state, blank symbol, and transition table.</p>
-    <h4>Example</h4>
+    <h3>Crea el tuyo</h3>
+    <p>Haga derivados de los ejemplos o de sus propias creaciones usando
+      <i>Editar</i> &gt; <i>DDuplicar documento</i>.
+      También puedes empezar desde cero con un nuevo documento en blanco.</p>
+    <p>Todo lo que se necesita para describir una máquina de Turing es un estado inicial, un símbolo en blanco y una tabla de transición..</p>
+    <h4>Ejemplo:</h4>
     <pre>
 # Adds 1 to a binary number.
 input: '1011'
@@ -554,36 +464,18 @@ table:
   done:
 </pre>
     <p>
-      Here the states are <code>right</code>, <code>carry</code>, and <code>done</code>.<br>
-      The symbols are '<code>1</code>', '<code>0</code>', and '<code> </code>'.
+      Aquí están los estados <code>right</code>, <code>carry</code>, y <code>done</code>.<br>
+      Los simbolos son '<code>1</code>', '<code>0</code>', y '<code> </code>'.
     </p>
     <p>
-      We designate one state the <i>start state</i>,
-      and one symbol the <i>blank</i> symbol (found on unmarked tape cells).
+      Designamos un estado como estado inicial y un símbolo como símbolo en blanco (que se encuentra en celdas de cinta sin marcar).
     </p>
     <p>
-      A state and a symbol together map to an instruction.
-      In the <code>carry</code> state, for instance, the symbol <code>1</code> maps to the instruction <code>{write: 0, L}</code>.
-      When no instruction is defined, as in the <code>done</code> state, the machine halts.
+      Un estado y un símbolo juntos se asignan a una instrucción.
+      En el estado <code>carry</code>, para la instancia del simbolo <code>1</code> maps en la instruccion <code>{write: 0, L}</code>.
+      Cuando no se define ninguna instrucción, como en el estado <code>done</code>, la máquina se detiene.
     </p>
-    <h4>Instruction format</h4>
-    The general form of an instruction has three parts:
-    <pre>{write: <var>symbol</var>, <var>move</var>: <var>state</var>}</pre>
-    <ul>
-      <li><code>{write: 1, L: done}</code> writes the symbol <code>1</code>,
-        moves the tape head left (<code>L</code>), and goes to the <code>done</code> state.
-      </li>
-    </ul>
-    <p>For brevity, you can omit the symbol and state if they stay the same.</p>
-    <ul>
-      <li><code>{L: carry}</code> writes the same symbol that was read,
-        moves the tape head left, and goes to the <code>carry</code> state.</li>
-      <li><code>R</code> (shorthand for {R}) simply moves the tape head right.
-        It writes back the same symbol and stays in the same state.</li>
-    </ul>
   </section>
-
-
 
   <div class="col-md-4 col-sm-12">
     <h3>Tips</h3>
@@ -626,14 +518,6 @@ table:
   </div>
 </div>
 </div>
-
-<footer class="page-footer">
-  <a href="https://github.com/aepsilon/turing-machine-viz" target="_blank" title="View on GitHub">
-    <svg class="octicon octicon-mark-github" height="24" width="24" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z" />
-    </svg>
-  </a>
-</footer>
 
 <!-- Dialog for Import -->
 <div id="importDialog" class="modal fade" tabindex="-1" role="dialog"

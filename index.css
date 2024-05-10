@@ -1,5 +1,33 @@
 body {
     font-variant-ligatures: contextual;
+    background-color: #060b10;
+    color: #e0f2fe;
+}
+
+.navbar-default {
+    background-color: #0ea5e9;
+    border-color: #0284c7;
+}
+
+h3 {
+    color: #f0f9ff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+h4 {
+    color: #f0f9ff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+p {
+    font-family: "Montserrat", sans-serif;
+}
+li {
+    font-family: "Montserrat", sans-serif;
+}
+i {
+    font-family: "Montserrat", sans-serif;
 }
 
 nav .navbar-right {
@@ -8,11 +36,11 @@ nav .navbar-right {
 }
 
 .navbar-brand {
-    font-variant: small-caps;
     letter-spacing: .03em;
     /* for caps */
-    font-family: 'Avenir Next', 'Avenir', 'Lucida Grande',
-        'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    color: #e0f2fe;
+    font-weight: 600;
 }
 
 pre {
@@ -132,24 +160,6 @@ a.disclosure-triangle+div.collapsing>.panel:first-child {
 .octicon.octicon-mark-github {
     fill: currentColor;
     overflow: visible;
-}
-
-.page-footer {
-    margin: 2em 0 0 0;
-    padding: 1.1em;
-    border-top: 1px solid #ddd;
-    background: hsl(0, 0%, 96%);
-    text-align: center;
-    line-height: 0;
-    /* to center logo vertically */
-}
-
-.page-footer .octicon {
-    color: hsl(0, 0%, 35%);
-}
-
-.page-footer a .octicon:hover {
-    color: hsl(0, 0%, 0%);
 }
 
 /* Fix overflow inside modal caused by td pre */
