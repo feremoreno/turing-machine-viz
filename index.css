@@ -15,20 +15,6 @@ nav .navbar-right {
         'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.kern {
-    letter-spacing: -.1em;
-    font-kerning: none;
-    /* kern manually */
-}
-
-.navbar-brand .kern-Ma {
-    letter-spacing: 0em
-}
-
-.navbar-brand .kern-Vi {
-    letter-spacing: -.02em
-}
-
 pre {
     background-color: hsl(0, 0%, 98%);
 }
